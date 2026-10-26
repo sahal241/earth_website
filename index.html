@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDU Planets — Explore Our Solar System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 3D Three.js Main Space Scene -->
+  <div id="canvas-container">
+    <canvas id="webgl-canvas"></canvas>
+  </div>
+
+  <!-- Ambient Atmospheric Atmospheric Backlight -->
+  <div class="ambient-glow" id="ambient-glow"></div>
+
+  <!-- UI Overlay -->
+  <div class="ui-container">
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+      <div class="nav-left">
+        <button class="icon-btn back-btn" id="back-btn" aria-label="Go Back">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <span class="brand-logo">edu</span>
+      </div>
+
+      <nav class="nav-right">
+        <ul class="nav-links">
+          <li class="nav-item active">
+            <a href="#planets">Planets</a>
+            <span class="nav-active-bar"></span>
+          </li>
+          <li class="nav-item"><a href="#tution">Tution</a></li>
+          <li class="nav-item"><a href="#tutorials">Tutorials</a></li>
+          <li class="nav-item"><a href="#blog">Blog</a></li>
+        </ul>
+        <button class="enroll-btn" id="enroll-btn">Enroll</button>
+      </nav>
+    </header>
+
+    <!-- Header Divider Line -->
+    <div class="nav-divider"></div>
+
+    <!-- Center Hero Section -->
+    <main class="hero-content" id="hero-content">
+      <p class="hero-subtitle">PLANET</p>
+      
+      <div class="hero-title-wrapper">
+        <h1 class="hero-title" id="hero-title">EARTH</h1>
+      </div>
+
+      <div class="hero-divider"></div>
+
+      <p class="hero-description" id="hero-description">
+        Learn more about the fascinating details that we call our home, Planet Earth. Course enrollment starts today. Early Bird tickets typically last a week, don't miss out!
+      </p>
+
+      <div class="hero-actions">
+        <button class="cta-btn" id="cta-btn">GET STARTED</button>
+      </div>
+    </main>
+
+    <!-- Dedicated Down Indicator resting over the planet surface -->
+    <div class="down-indicator-container">
+      <button class="down-indicator" id="down-btn" aria-label="Explore Planet">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Side Interactive Planet Selectors -->
+    <!-- Left Selector (Sphere half protruding from left, label to right) -->
+    <div class="side-selector left-selector" id="left-selector" role="button" tabindex="0" aria-label="Select Left Planet">
+      <div class="side-planet-preview">
+        <canvas class="mini-canvas" id="left-mini-canvas" width="220" height="220"></canvas>
+      </div>
+      <span class="side-planet-label" id="left-planet-label">VENUS</span>
+    </div>
+
+    <!-- Right Selector (Label to left, sphere half protruding from right) -->
+    <div class="side-selector right-selector" id="right-selector" role="button" tabindex="0" aria-label="Select Right Planet">
+      <span class="side-planet-label" id="right-planet-label">MARS</span>
+      <div class="side-planet-preview">
+        <canvas class="mini-canvas" id="right-mini-canvas" width="220" height="220"></canvas>
+      </div>
+    </div>
+
+    <!-- Audio FX & Navigation Hint (bottom right) -->
+    <div class="controls-hint">
+      <button class="audio-toggle" id="audio-toggle" title="Toggle Atmospheric Sound FX">
+        <svg id="sound-icon-on" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+        </svg>
+        <svg id="sound-icon-off" class="hidden" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line>
+          <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+      </button>
+      <span class="keyboard-nav-hint">Use &larr; / &rarr; keys</span>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

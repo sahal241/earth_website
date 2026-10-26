@@ -1,0 +1,38 @@
+node_modules/
+dist/
+.DS_Store
+
+# Scratch/debug files
+*.py
+*.mjs
+check_earth.py
+check_errors.mjs
+measure.py
+measure2.py
+inspect_img.py
+calc_angles.js
+test_rot.js
+fetch_assets.py
+extract_frames.swift
+
+# Screenshot previews
+*_screenshot*.png
+*_preview*.png
+test_screenshot*.png
+venus_screenshot_amber.png
+venus_screenshot_updated.png
+earth_preview.png
+mars_preview.png
+venus_preview.png
+
+# Video source
+video.mov
+
+# Extracted frames
+frames/
+
+# Compiled executables
+extract_frames
+extract2
+extract3
+extract4
